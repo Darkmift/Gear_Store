@@ -7,8 +7,9 @@ class CarStore {
     }
 
     public function buyCar($brand) {
-        $this->CarFactory->create($brand);
+        $car = $this->CarFactory->create($brand);
         $this->fillGas();
+        return $car;
     }
 
     public function fillGas() {

@@ -5,17 +5,18 @@ class CarFactory {
     public function create($brand) {
         switch ($brand) {
             case 'Jeep':
-                $this->car = new Jeep();
+                $car = $this->car = new Jeep($brand);
                 break;
             case 'Dodge':
-                $this->car = new Dodge();
+                $car = $this->car = new Dodge($brand);
                 break;
             case 'ford':
-                $this->car = new Ford();
+                $car = $this->car = new Ford($brand);
                 break;
             default:
                 echo 'car brand not matched';
         }
+        return $car;
     }
 
 }
